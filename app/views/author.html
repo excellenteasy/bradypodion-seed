@@ -1,0 +1,34 @@
+<bp-navbar-config>
+</bp-navbar-config>
+<bp-table bp-scroll class="bp-table-grouped" ng-init="author = authors[params.id]">
+  <bp-table-grouped-header>Personal</bp-table-grouped-header>
+  <bp-table>
+    <bp-cell class="bp-cell-value2">
+      <span class="label">
+        Firstname
+      </span>
+      <span class="value">
+        {{ author.firstname }}
+      </span>
+    </bp-cell>
+    <bp-cell class="bp-cell-value2">
+      <span class="label">
+        Lastname
+      </span>
+      <span class="value">
+        {{ author.lastname }}
+      </span>
+    </bp-cell>
+  </bp-table>
+  <bp-table-grouped-header>Social</bp-table-grouped-header>
+  <bp-table>
+    <bp-cell ng-repeat="social in author.social" bp-tap="href(social.url)" class="bp-cell-value2">
+      <span class="label">
+        {{ social.name }}
+      </span>
+      <span class="value">
+        {{ social.user }}
+      </span>
+    </bp-cell>
+  </bp-table>
+</bp-table>

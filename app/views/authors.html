@@ -1,0 +1,10 @@
+<bp-table bp-scroll class="bp-table-grouped">
+  <bp-table>
+    <bp-cell ng-repeat="author in authors" bp-sref="author({id: $index})">
+      {{ author.firstname }} {{ author.lastname }}
+    </bp-cell>
+  </bp-table>
+  <bp-table-grouped-footer>
+    powered by <span bp-tap="href('https://excellenteasy.com/')">excellenteasy</span>
+  </bp-table-grouped-footer>
+</bp-table>
