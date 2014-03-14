@@ -23,6 +23,9 @@ module.exports = function (grunt) {
       styles: {
         files: ['.tmp/styles/main.css'],
       },
+      view: {
+        files: ['<%= app.app %>/views/**/*.html'],
+      },
       less: {
         files: ['<%= app.app %>/styles/**/*.less'],
         tasks: ['less:styles']
