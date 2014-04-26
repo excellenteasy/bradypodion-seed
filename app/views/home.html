@@ -1,5 +1,5 @@
 <bp-navbar-config>
-  <bp-action class="bp-icon" theme-toggle></bp-action>
+  <bp-action class="bp-icon" ng-click="toggleTheme()" theme-toggle></bp-action>
 </bp-navbar-config>
 <bp-table bp-scroll class="bp-table-grouped">
   <bp-table-grouped-header>Resources</bp-table-grouped-header>
@@ -26,7 +26,7 @@
     </bp-cell>
   </bp-table>
   <bp-table>
-    <bp-cell bp-sref="authors">
+    <bp-cell ui-sref="authors">
       <bp-action class="bp-icon fa-users before"></bp-action>
       Authors
       <bp-action class="bp-icon fa-angle-right after"></bp-action>

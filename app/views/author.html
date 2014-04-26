@@ -22,7 +22,7 @@
   </bp-table>
   <bp-table-grouped-header>Social</bp-table-grouped-header>
   <bp-table>
-    <bp-cell ng-repeat="social in author.social" bp-tap="href(social.url)" class="bp-cell-value2">
+    <bp-cell ng-repeat="social in author.social" ng-click="href(social.url)" class="bp-cell-value2">
       <span class="label">
         {{ social.name }}
       </span>

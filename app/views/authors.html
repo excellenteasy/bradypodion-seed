@@ -1,6 +1,6 @@
 <bp-table bp-scroll class="bp-table-grouped">
   <bp-table>
-    <bp-cell ng-repeat="author in authors" bp-sref="author({id: $index})">
+    <bp-cell ng-repeat="author in authors" ui-sref="author({id: $index})">
       {{ author.firstname }} {{ author.lastname }}
     </bp-cell>
   </bp-table>

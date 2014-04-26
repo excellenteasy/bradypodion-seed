@@ -2,7 +2,7 @@
 angular.module('bpExperimentApp', ['bp', 'angular-loading-bar'])
   .config(function($urlRouterProvider, $stateProvider, bpAppProvider, cfpLoadingBarProvider) {
     bpAppProvider.setConfig({
-      platform: localStorage.getItem('platform') || 'ios'
+      platform: 'ios' // 'android'
     });
     cfpLoadingBarProvider.includeSpinner = false;
     $urlRouterProvider.otherwise('/');
@@ -31,22 +31,18 @@ angular.module('bpExperimentApp', ['bp', 'angular-loading-bar'])
 
 
 angular.module('bpExperimentApp')
-  .directive('themeToggle', function(bpApp, bpTap) {
+  .directive('themeToggle', function(bpApp) {
     return function(scope, element) {
       var platforms = ['ios', 'android'];
-      var tap = bpTap(element);
 
       element.addClass(bpApp.platform === 'ios' ? 'fa-android' : 'fa-apple');
-      element.on('tap', function() {
+
+      scope.toggleTheme = function() {
         var index = platforms.indexOf(bpApp.platform);
         bpApp.platform = platforms[++index % 2];
         localStorage.setItem('platform', bpApp.platform);
         location.reload();
-      });
-
-      scope.$on('$destroy', function() {
-        tap.disable();
-      });
+      };
     };
   })
   .controller('SeedCtrl', function($scope) {
